@@ -1,0 +1,34 @@
+
+
+1. Null Value
+SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address IS NULL;
+2.update
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
+3. select top
+SELECT TOP 3 * FROM Customers;
+4.select max and MIN
+SELECT MAX(Price) AS LargestPrice
+FROM Products;
+SELECT MIN(Price) AS LargestPrice
+FROM Products;
+
+5. like condition
+Finds any values that start with "a"
+SELECT * FROM Customers
+WHERE CustomerName LIKE 'a%';
+
+Finds any values that end with "a"
+SELECT * FROM Customers
+WHERE CustomerName LIKE '%a';
+
+Finds any values that have "or" in any position
+SELECT * FROM Customers
+WHERE CustomerName LIKE '%or%';
+
+Finds any values that start with "a" and ends with "o"
+SELECT * FROM Customers
+WHERE ContactName LIKE 'a%o';
