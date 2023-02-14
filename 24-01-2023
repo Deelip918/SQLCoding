@@ -1,0 +1,30 @@
+
+A. UNION:It combines two or more results from multiple SELECT queries into a single result set
+
+SELECT columns FROM table1    
+UNION    
+SELECT columns FROM table2;    
+B. UNION ALL:Union operator, but it does not remove the duplicate rows from the output of the SELECT statements
+
+SELECT columns FROM table1    
+UNION  ALL  
+SELECT columns FROM table2;    
+C. INTERSECT:returns the common records from two or more SELECT statements
+
+SELECT columns FROM table1    
+INTERSECT  
+SELECT columns FROM table2;    
+D.MINUS:returns the records from the first query, which is not found in the second query.
+
+SELECT columns FROM table1    
+MINUS  
+SELECT columns FROM table2;   
+
+2. subquery 
+SELECT salary    
+FROM   
+    (SELECT salary   
+     FROM employees   
+     ORDER BY salary DESC   
+     LIMIT 3) AS Temp   
+ORDER BY salary LIMIT 1;  
