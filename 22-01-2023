@@ -28,5 +28,4 @@ CREATE TABLE Persons (
 
 ALTER TABLE Persons
 ADD CONSTRAINT CHK_PersonAge CHECK (Age>=18 AND City='Sandnes');
-Date 23-01-2022
-1. count,avg,sum
+
