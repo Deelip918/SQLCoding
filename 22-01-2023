@@ -1,0 +1,32 @@
+1. Insert into
+INSERT INTO Persons (FirstName,LastName)
+VALUES ('Lars','Monsen');
+
+2. Date Data Type
+SELECT * FROM Orders WHERE OrderDate='2008-11-11'
+
+3. create new table
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    City varchar(255) DEFAULT 'Sandnes'
+);
+4. CHECK Constraint
+
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    City varchar(255),
+    CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes')
+);
+
+5. SQL check for Alter table
+
+ALTER TABLE Persons
+ADD CONSTRAINT CHK_PersonAge CHECK (Age>=18 AND City='Sandnes');
+Date 23-01-2022
+1. count,avg,sum
