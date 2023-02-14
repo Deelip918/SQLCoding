@@ -1,0 +1,51 @@
+ take a table and generate the output as given
+ a    
+ 1
+ 2
+ 3
+ 4
+ o/p
+ 1
+ 2
+ 2
+ 3
+ 3
+ 3
+ 4
+ 4
+ 4
+ 4
+ 
+ solution()
+ 
+ create table x (a int)
+ insert into x values(1),(2),(3),(4);
+ select x.a from x
+ left join x b on x.a>=b.a
+ o/p=
+a
+1
+2
+2
+3
+3
+3
+4
+4
+4
+4
+another solution
+ select * from x 
+ cross join x b
+ where x.a<=b.a
+a
+1
+2
+2
+3
+3
+3
+4
+4
+4
+4
