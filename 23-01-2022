@@ -1,0 +1,25 @@
+
+1. count,avg,sum
+SELECT SUM(Quantity)
+FROM OrderDetails;
+
+SELECT COUNT(ProductID)
+FROM Products;
+
+SELECT AVG(Price)
+FROM Products;
+
+2. wildcards
+SELECT * FROM Customers
+WHERE City LIKE '[a-c]%';
+
+SELECT * FROM Customers
+WHERE City LIKE '[!acs]%';
+3. case expresion
+SELECT CustomerName, City, Country
+FROM Customers
+ORDER BY
+(CASE
+    WHEN City IS NULL THEN Country
+    ELSE City
+END);
