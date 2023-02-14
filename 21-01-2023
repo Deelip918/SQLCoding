@@ -1,0 +1,17 @@
+IN Operator
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
+
+BETWEEN Operator
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
+
+Alias for Columns
+SELECT CustomerName, Address + ', ' + PostalCode + ' ' + City + ', ' + Country AS Address
+FROM Customers;
+
+UNION Operator
+SELECT City FROM Customers
+UNION ALL
+SELECT City FROM Suppliers
+ORDER BY City;
