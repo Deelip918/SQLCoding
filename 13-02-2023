@@ -1,0 +1,40 @@
+13-02-2023
+creating table and inserted value
+--use Data1
+create table amazon (id int identity(100,5),orderDetails varchar(20),productName nvarchar(30),adres varchar(20));
+--create table users (userid integer,username varchar(20),Address1 varchar(20));
+insert into amazon (orderDetails,productName,addres) values('ordered','smartphone','unknown')
+insert into amazon values('ordered','smartwatch','Delhi')
+insert into amazon values('InCart','KeyBoard','Gorakhpur'),('cancelled','tampered','ElectronicCity');
+select*from amazon
+--insert into users values('100','Deelip','Pipraich'),('105','Manish','Parashurampur'),('110','Ashwani','Bhathat');
+select*from users
+
+
+																
+	(I) Outputs for following type of joins										Table A		Table B			
+											X		Y			
+	Inner Join										1		1			
+	Left Join										1		2			
+	Right Join															
+	Full outer join															
+	Cross join															
+																
+	On															
+	1. A.X = A.X		Inner Join			Left Join			Right Join			Full outer join			Cross join	
+			1	1		1	1		1	1		1	1		1	1
+			1	2		1	2		1	1		1	1		1	2
+			1	1		1	1		1	2		1	2		1	1
+			1	2		1	2		1	2		1	2		1	2
+																
+	2. B.Y = B.Y		Inner Join			Left Join			Right Join			Full outer join			Cross join	
+			1	1		1	1		1	1		1	1		1	1
+			1	1		1	2		1	1		1	1		1	2
+			1	2		1	1		1	2		1	2		1	1
+			1	2		1	2		1	2		1	2		1	2
+																
+	3. A.X = B.Y		Inner Join			Left Join			Right Join			Full outer join			Cross join	
+			1	1		1	1		1	1		1	1		1	1
+			1	1		1	1		1	1		1	1		1	2
+									null	2		null	2		1	1
+															1	2
