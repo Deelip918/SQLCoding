@@ -1,0 +1,25 @@
+
+
+1. Limit keyword
+   SELECT salary FROM employees   
+   ORDER BY salary DESC   
+   LIMIT 2, 1;  
+2. Using TOP Keyword
+   SELECT TOP 1 salary   
+   FROM   
+    (SELECT DISTINCT TOP 3 salary   
+     FROM employees 
+
+     ORDER BY salary DESC) AS Temp   
+   ORDER BY salary ASC;  
+3. creating view from table
+ CREATE VIEW email_view AS  
+SELECT email FROM user_log  
+WHERE country='Tokyo'; 
+
+4. How to combine GROUP BY, ORDER BY and HAVING
+SELECT Email, COUNT(*)
+FROM user_log
+GROUP BY Email
+HAVING COUNT(*) > 1
+ORDER BY UpdateDate DESC
