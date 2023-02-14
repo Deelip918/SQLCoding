@@ -1,0 +1,57 @@
+
+CTEs (or Common Table Expressions)
+
+with cte1 as ( select customer_id,
+              first_name,
+              last_name,age 
+              from Customers)
+ select customer_id,
+ first_name,
+ last_name,
+ age
+ from cte1
+ 
+# CTE with Explicitly Defined Columns
+ with cte1 (customer_id,first_name,last_name,age)
+as( select customer_id, first_name, last_name,age from customers
+)
+select customer_id, first_name, last_name,age
+from cte1
+order by customer_id
+
+# A CTE in an UPDATE Statement
+with cte1 
+as( select customer_id, first_name, last_name,age*2 as double_age
+from customers)
+update customers
+set age=double_age
+from cte1 c
+left join customers cust on cust.customer_id=c.customer_id;
+select * from customers
+
+# A Nested CTE in SQL Server
+WITH cte1 AS (
+  SELECT
+    customer_id,
+    age,
+    first_name,
+    country
+  FROM Customers
+),
+ 
+cte2 AS (
+  SELECT
+    customer_id,
+    AVG(age) AS average_age,
+    first_name,
+    country
+  FROM cte1
+  GROUP BY first_name, country
+)
+ 
+SELECT
+  customer_id,
+  average_age,
+  first_name
+FROM cte2
+order by customer_id;
