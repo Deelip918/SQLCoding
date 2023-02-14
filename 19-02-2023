@@ -1,0 +1,9 @@
+1. where condition
+SELECT * FROM Customers
+WHERE Country='Germany' AND City='Berlin';
+2.order by condition
+SELECT * FROM Customers
+ORDER BY Country, CustomerName;
+3.Insert into
+INSERT INTO Customers (CustomerName, City, Country)
+VALUES ('Cardinal', 'Stavanger', 'Norway');
